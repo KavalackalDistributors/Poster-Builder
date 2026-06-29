@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; background: #0f0f0f; color: #fff; }
+button, textarea, input { font: inherit; }
+.poster-scale { width: min(100%, 800px); aspect-ratio: 4 / 5; }
+.poster-landscape { aspect-ratio: 16 / 9; }
+.poster-square { aspect-ratio: 1 / 1; }
+.animate-message { animation: message-in 260ms ease both; }
+.animate-thumb { animation: thumb-in 220ms ease both; }
+@keyframes message-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes thumb-in { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (min-width: 1920px) { html { font-size: 17.6px; } }
+@media (max-width: 767px) {
+  .drawer-sidebar .sidebar-label { display: inline; }
+  .drawer-sidebar .sidebar-label.block { display: block; }
+}
